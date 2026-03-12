@@ -1,4 +1,4 @@
-# Architecture Interview Questions
+# Architecture
 ## How would you handle conflicts?
 ### Playbook
 1. Diagnose the conflict: 
