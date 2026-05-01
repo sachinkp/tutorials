@@ -1,5 +1,5 @@
-
 # Start with
+
 1. I wanted to sync on priorties, earlier the team leadership asked for
     1. Acceleratin and shipping the dupe work - which we completed
     2. The same for MFE - last few cards are remaining
@@ -18,16 +18,14 @@ To make sure I am aligned with our next priorities, what outcomes you want me to
 ## Next
 Which of these Arb vs Regi projects has the highest impact on our current backlog of user complaints?" 
 
-May 01 2026
+**May 01 2026**
 Manager's Question:
-- you have seen my work last three months you must have seen good side and the odd side you must have gotten feedback from the peers Emily Brett, Brian what do you think my strengths are and where I can contribute the most
-- Last time you asked about whether I want to be in Execution or not. What the execution looks like according to you?
+- Last time you asked about whether I want to be in Execution or not. 
+    - What does the execution look like according to you?
+    - you have seen my work last three months you must have seen good side and the odd side you must have gotten feedback from the peers Emily Brett, Brian what do you think my strengths are and where I can contribute the most
 Execution = “Do the work we assign you, stay in delivery mode, don’t challenge decisions.”
 Or 
 Strategy - "Do you want to be in strategy, architecture, or leadership?”"
-
-
-
 
 My Answer:
 “I’m comfortable driving execution, but I also want to contribute at a system‑level — especially around architecture, integration strategy, and cross‑team alignment. I want to make sure I’m adding value beyond just delivery.”
@@ -46,5 +44,5 @@ When asked about the TL
 - I am giving him space to step into this role. I am here to support where needed, but I don't want to overstep
 - I am available whenever he's ready to sync. I want him to feel empowered in this role.
 - closing: always happy to support. I want a team to succeed.
-- Dont want to box in to legacy
+- Message: Dont want to box in to legacy
 
