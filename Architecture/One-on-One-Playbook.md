@@ -17,3 +17,24 @@ To make sure I am aligned with our next priorities, what outcomes you want me to
 - 
 ## Next
 Which of these Arb vs Regi projects has the highest impact on our current backlog of user complaints?" 
+
+May 01 2026
+Manager's Question:
+- Last time you asked about whether I want to be in Execution or not. What the execution looks like according to you?
+Execution = “Do the work we assign you, stay in delivery mode, don’t challenge decisions.”
+Or 
+Strategy - "Do you want to be in strategy, architecture, or leadership?”"
+
+My Answer:
+“I’m comfortable driving execution, but I also want to contribute at a system‑level — especially around architecture, integration strategy, and cross‑team alignment. I want to make sure I’m adding value beyond just delivery.”
+"“I want a balance — execution where needed, but also contributing to architectural clarity and cross‑team alignment.”
+
+Counter Question:
+
+1. “Where do you see my strengths being used most effectively in the new structure?”
+“As we move forward, I’d like to stay involved in system‑level discussions — especially where legacy, Salesforce, and .NET intersect. That’s where I can add the most value.”
+
+
+2. How Manager can support?
+- “Clarity on expectations and visibility into upcoming architectural decisions would help me contribute at the right level.”
+
