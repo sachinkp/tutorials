@@ -56,6 +56,23 @@ Server responds with
 #### Three-Legged Authentication
 -- Auth code where user is involved
 
+#### Types of Security  Token?
+- **Bearer Token** is Access Token, indicates that anyone in possession of the token (“the bearer”) can use it to access the associated resources, **without additional verification**.
+    Authorization: Bearer "Access Token JWT"
+- ID Token: Issued by IDP, has userinfo(email, username, name) and should not be used as Access Token, ID tokens are meant for client applications- Customer Facing UI.
+
+
+- Access Token: Meant for Authorization to access Resoyrce API. Contains Scopes, permissions, expiration uses to access a protected resource on behalf of a resource owner.
+```json
+{
+  "access_token": "ya29.a0AfH6SMDIEXAMPLE...",
+  "token_type": "Bearer",
+  "expires_in": 3599,
+  "refresh_token": "1//0eWEXAMPLE...",
+  "scope": "https://googleapis.com"
+}
+```
+
 #### Nonce in OIDC
 - The server side client generates random nonce before forwarding Auth request to IDP
 - When IDP issues token, it includes the same nonce in the token
