@@ -11,7 +11,9 @@ Use whichever aligns with the company and recruiter style.
 ⭐ Option 1 — Executive, Direct, High‑Impact (Best for Big Tech / Fortune 500)
 
 Hi ,
-I’m exploring Staff/Sr Principal‑level opportunities where I can drive modernization across complex legacy ecosystems and lead cross‑team architectural strategy.My recent work has focused on transforming multi‑system environments (PowerBuilder, on‑prem .NET, Salesforce) into scalable, cloud‑ready platforms — simplifying complexity, aligning stakeholders, and accelerating delivery.If you’re hiring for roles that need deep modernization experience and system‑level thinking, I’d welcome a conversation.Best,
+I’m exploring Staff/Sr Principal‑level opportunities where I can drive modernization across complex legacy ecosystems and lead cross‑team architectural strategy.My recent work has focused on transforming multi‑system environments (PowerBuilder, on‑prem .NET, Salesforce) into scalable, cloud‑ready platforms — simplifying complexity, aligning stakeholders, and accelerating delivery.If you’re hiring for roles that need deep modernization experience and system‑level thinking, I’d welcome a conversation.
+
+Best,
 Sachin
 
 ---
@@ -31,3 +33,12 @@ I’m currently evaluating opportunities where modernization is a strategic prio
 Sachin
 
 ---
+
+Call with Mark Smith - 
+-- Contract to hire - Azure Architect
+-- Local -- Remote has limitation - the role cant grow in remote
+-- Modernization, migration -> AI would enable multi-year modernization to multi-month modernization
+-- Nice to have - cross cloud if you can land me on AWS
+-- Scope for growth
+
+S

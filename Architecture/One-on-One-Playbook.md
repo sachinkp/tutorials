@@ -46,3 +46,26 @@ When asked about the TL
 - closing: always happy to support. I want a team to succeed.
 - Message: Dont want to box in to legacy
 
+### May 08 2026
+I need feedback that helps me to grow in career
+**keep me looped into architectural directions and decisions so I can anticipate risks early and plan execution accordingly I need visibility in design and early involvement in system level discussion to execute effectively**
+When the manager reinforces execution
+ I am comfortable, driving execution to make delivery smooth. I would like visibility into architectural decision so I can align the team effectively.
+
+when the manager asked what you need
+ Clarity on upcoming architectural decisions priorities and cross team dependences will help me drive execution effectively
+
+When the manager ask about collaboration with the team lead
+  I am giving him space to step into the role. I'm here to support where whenever he needs it.
+
+When ask about if you are getting enough architectural involvement
+I think architectural decisions are taken by Brian, but I do want to contribute at a system level to reduce risk and improve clarity
+
+** to make execution smoothly. I would like clarity on how we are separating responsibilities between architecture and execution that helps me anticipate risk and align the team effectively.
+
+
+## Modernization with AI Agent 
+: "I’m not here to slow down the AI; I’m here to ensure the AI doesn't build a system we can't maintain in 2027."
+Modernizing legacy systems isn't just about rewriting COBOL or .NET into Python/Go; it’s about preserving business logic that was written 15 years ago and never documented.
+• Agents are "context-blind." They will rewrite a function to be 10x faster but accidentally strip out a specific edge case for Virginia state tax law on used car sales.
+• The Friction: When a PM pushes an agent-generated feature, they are often unknowingly deleting decades of "tribal knowledge" embedded in the code.
