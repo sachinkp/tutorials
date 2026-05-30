@@ -69,3 +69,24 @@ I think architectural decisions are taken by Brian, but I do want to contribute 
 Modernizing legacy systems isn't just about rewriting COBOL or .NET into Python/Go; it’s about preserving business logic that was written 15 years ago and never documented.
 • Agents are "context-blind." They will rewrite a function to be 10x faster but accidentally strip out a specific edge case for Virginia state tax law on used car sales.
 • The Friction: When a PM pushes an agent-generated feature, they are often unknowingly deleting decades of "tribal knowledge" embedded in the code.
+
+May 29
+How are you feeling
+
+I am/want to stay focus on modernization efforts and help the team to make progress on CEO's modernization agenda. Trying to avoid any distractions or side conversations.
+
+
+In a complex system like us, Design and Execution go hand in hand.
+
+Two points to discuss 
+1. Support - How long you want me to continue on support? Emily is asking for Carding, 
+2. CEO Roadmap 
+
+I heard that the CEO presented the modernization plan to the board. I want to make sure I am aligne with the direction and contributing at the system level where I can add the most value.
+
+Last time we talked about oidentifying the boundaries
+we cannot cover everything we have let's say 6 Month Rd.
+
+what are going to be our top modernization priorities ?
+where do you see my system Level contribution fit into this modernization roadmap?
+

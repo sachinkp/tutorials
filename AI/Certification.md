@@ -1,4 +1,4 @@
-Here is your full 60‑day daily Azure AI certification study plan, with direct links to official Microsoft Learn content.
+n Here is your full 60‑day daily Azure AI certification study plan, with direct links to official Microsoft Learn content.
 All links below come from Microsoft Learn’s official study guides and courses for AI‑901, AI‑103, and AI‑200, grounded in the sources retrieved.
 Citations appear where required.
 
