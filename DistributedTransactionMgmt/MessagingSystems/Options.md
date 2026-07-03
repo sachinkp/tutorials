@@ -3,9 +3,16 @@
 - Load Leveling : brings predictability when traffic spikes and dont overconsume resources.
  resources.
  – Lord, balancing each competing consumer acquires lock on message
-
  – fan out message processing using pub sub model
 
+## AMQP
+- Advanced Message Queuing Protocol
+- Producers send messages to the broker, while consumers retrieve or receive them.
+- Messages go to Broker, Exchange Rules in the Brokers route message copies to target queue
+- Routing Types: Direct, Fanout and Topc
+ - Direct: Send message to one queue
+ - Fanout: Routes messages to all bound queues  (Topic & Default Subscription)
+ - Topic: Routes messages by matching routing filters
 
 ## SQS
 
@@ -14,8 +21,7 @@ SQS is fundamentally a pull base system. consumers poll and polling frequency de
 
 SQS is great when you don't poll aggressively
 
-For example.
-,
+For example,
 60 workfor example,
 60 workers Polling every seconds can consume 
 80 * 86400 seconds per day = 2.6 million polls per worker per month
@@ -64,3 +70,7 @@ Use Rabbit MQ when you have uncertain burst in load and need dynamic scaling
 - Event Grid is for lightweight eventing, 
 - Event Hubs for large-scale telemetry, 
 - Service Bus for critical business messages
+**Partitining vs Session**
+  - Partition: Spread messages across multiple backend stores.
+  - Session: FIFO ordering and processing
+  
