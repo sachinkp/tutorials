@@ -182,7 +182,41 @@ Guarantee: Reads always return the most recent committed version of an item.
 Trade-off: Highest latency and lowest throughput; limited availability during regional outages.
 Use Case: Financial transactions, inventory management, or any system where stale data is unacceptable.
 
-2. Eventual
+3. Eventual
 Guarantee: No ordering guarantees. All replicas will "eventually" converge to the same state if no new writes occur.
+
+## Scaling in Cosmos
+<img width="966" height="665" alt="image" src="https://github.com/user-attachments/assets/463af01f-2350-4e9e-bb37-bce6697d6147" />
+ - Parallel Query Execution & High throuput: --Point-Reads by Partition Key: Cosmos DB routes the request directly to the specific partition. Avoid cross-partition queries
+ - Scaling out large data set: Across multiple physical partition linearly
+
+**Sharding Vs Partitioning in SQL**
+- Sharding(Scale Out): Data is distributed across multiple "physical" servers/databases (horizontal scaling)
+- Partition(Scale Up): Data is grouped or splits within a single database on a single servers
+
+**Cosmos Equivalent**
+- Sharding(Scale Out): Physical Partitioning
+- Partition(Scale Up): Logical Partitioning
+
+## Hierarchical Partitioning
+- allows you to configure up to a three-level hierarchy for your partition keys in Azure Cosmos DB
+- Multi-tenant Isolation: data limitations in multi-tenant or high-scale => systems /UserId /TenantId  /AppId
+- Querying by Subpartition TenantId /TenantId
+- Point Read: Partition: /UserId /TenantId  /AppId
+
+## Handling Concurrency : Preventing Overwrite/collision in Multithreaded 
+- Cosmos uses Optimistic Concurrency: Using etag over row level lock(pessimistic)
+    - row level lock(pessimistic) keeps compute idle and request is waiting until the lock is released
+    - not good for scaling and high throughput
+- Each item has etag, which update upon modification
+- Client GETResourceById- returns etag in response header
+- Client UPDATE and resubmit   the Resource with etag in IF-Match header
+- Server matches incoming etag with existing etag
+    - if matches- the updates are processed successfully
+    - if not matches- Server returns Conflict 412 Pre-condition failed
+- Retry with jitter
+    - Client GETResourceById- to get the latest resource and retry Update      
+
+
 Trade-off: Lowest latency, highest throughput, and highest availability.
 Use Case: Scenarios where precision is not critical, such as retweet counts or non-threaded comments
