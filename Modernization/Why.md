@@ -1,19 +1,22 @@
 # Why Modernization is Key for Legacy Applications 
 
 Rising Maintenance Costs: Older applications often require specialized skills to maintain, and the cost of keeping them running can quickly add up. 
+
 Security Vulnerabilities: Legacy systems may not meet modern security standards, making them prime targets for cyberattacks. 
+
 Integration Issues: Outdated systems may struggle to communicate with newer technologies, creating data silos and inefficiencies. 
+
 Limited Scalability: Businesses grow and change, but legacy applications often can’t scale to meet new demands. 
 
 Metrics:Which System to Modernize?
 1. Assess Business Needs  
 
 Start by identifying the applications that directly impact core business processes. 
-- Which systems are mission-critical? 
+- Which systems are mission-critical and offer business value? 
 - Which ones generate the most user complaints? 
-- Prioritize modernization efforts that will yield clear, tangible benefits for end users and the organization as a whole. 
+- Prioritize modernization efforts into shippable milestones that will yield clear, tangible benefits for end users and the organization as a whole. 
 
-2. Evaluate Risk and Complexity  
+2. Evaluate Risk and Complexity  - early wins
 
 - Avoid tackling your most complex legacy systems right off the bat.
 - Instead, look for “low-hanging fruit”—applications that are relatively straightforward to modernize and pose fewer risks during implementation. 
