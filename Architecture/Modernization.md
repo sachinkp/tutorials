@@ -220,3 +220,61 @@ Guarantee: No ordering guarantees. All replicas will "eventually" converge to th
 
 Trade-off: Lowest latency, highest throughput, and highest availability.
 Use Case: Scenarios where precision is not critical, such as retweet counts or non-threaded comments
+
+## Cursor based Deep Paginition
+When you run a query with a specified page size, Cosmos DB returns the requested documents along with an encrypted string header known as the continuation token. Passing this token back in the next request acts exactly like a cursor, allowing the database engine to resume right where it left off.
+```
+Request
+GET /items?cursor=abc123encryptedTokenString==
+Response
+{
+  "data": [ ... 10 items ... ],
+  "nextCursor": "abc123encryptedTokenString==" 
+}
+
+```
+```
+public async Task<(List<Family> Items, string ContinuationToken)> GetPaginatedItemsAsync(
+    string partitionKey, 
+    int pageSize, 
+    string existingContinuationToken = null)
+{
+    var items = new List<Family>();
+    
+    // 1. Configure query options with the cursor (token) and page size
+    QueryRequestOptions options = new QueryRequestOptions()
+    {
+        PartitionKey = new PartitionKey(partitionKey),
+        MaxItemCount = pageSize
+    };
+
+    string queryText = "SELECT * FROM c WHERE c.type = 'family' ORDER BY c.creationDate DESC";
+    
+    // 2. Initialize the iterator passing the token (can be null for page 1)
+    using (FeedIterator<Family> iterator = _container.GetItemQueryIterator<Family>(
+        queryText, 
+        existingContinuationToken, 
+        options))
+    {
+        // 3. Read the next single page of results
+        if (iterator.HasMoreResults)
+        {
+            FeedResponse<Family> response = await iterator.ReadNextAsync();
+            items.AddRange(response);
+            
+            // 4. Capture the new cursor/continuation token for the next API call
+            string nextContinuationToken = response.ContinuationToken;
+            
+            return (items, nextContinuationToken);
+        }
+    }
+
+    return (items, null);
+}
+```
+
+## Backpressure
+n Cosmos DB, you provision a specific amount of throughput measured in Request Units (RUs). If your code attempts to read or write data that exceeds your allocated RUs, Cosmos DB defends itself by applying backpressure.
+ * It stops processing your request.
+ * It throws a ⁠CosmosException⁠ with an HTTP status code 429 (Too Many Requests).
+ * It includes a header called ⁠x-ms-retry-after-ms⁠, explicitly telling your application exactly how many milliseconds to wait before trying again.
