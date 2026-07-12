@@ -24,6 +24,14 @@ Use this when asked why you’re leaving:
 
 “My current organization is in a period of stability rather than transformation. I’m looking for a place where modernization is a strategic priority and where strong architectural leadership can have meaningful impact.”
 
+CarMax:
+
+• Modernization is “nice to have”
+• Product often deprioritizes it
+• Legacy systems remain entrenched
+• Modernization work is fragmented
+
+
 This is:
 
 • Honest

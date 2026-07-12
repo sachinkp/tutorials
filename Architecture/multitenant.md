@@ -135,3 +135,37 @@ Mention:
 4. Address noisy neighbors & scaling• “To avoid one tenant impacting others, I’d enforce per‑tenant rate limits at the gateway, use per‑tenant or priority queues for heavy jobs, and monitor per‑tenant metrics so we can detect and isolate issues quickly.”
 
 5. Close with security & observability• “Security-wise, tenant_id comes only from validated tokens, never from client input. Observability-wise, all logs and metrics are tagged with tenant_id and request_id, so we can debug issues per tenant and maintain strong isolation.”
+
+
+## Nosy neighbor consuming compute and memory
+
+1. Shift to Cost-Based Rate Limiting (Token Bucket with Weights)
+Instead of treating every API call as equal, assign a "cost" or "weight" to each endpoint based on its average memory and CPU utilization.
+ How it works: A simple ⁠GET /user/profile⁠ might cost 1 token, while a heavy ⁠POST /reports/generate⁠ might cost 50 tokens. Tenants have a bucket of tokens per minute, not just requests.
+ Why it helps: It directly forces tenants who run heavy queries to back off quickly, preventing them from exhausting your resources even with low request volume.
+
+2. Implement the Bulkhead Pattern (Resource Isolation)
+Named after the watertight compartments in ships, this pattern ensures that a failure or resource crunch in one area doesn’t sink the whole application.
+ Pool Isolation: Divide your API workers into different pools. You can route all heavy/expensive endpoints to a dedicated "heavy-compute" pool of servers or containers, keeping your "lightweight" API paths fast and responsive.
+ Tenant Segregation (Tiered Infrastructure): If you have premium tenants and trial/freemium tenants, route them to different clusters. Never let a free-tier user starve a paying enterprise customer's resources.
+
+3. Offload Heavy Compute to Asynchronous Queues
+If an API call takes longer than a few hundred milliseconds and consumes heavy memory, it shouldn't be handled synchronously by your web servers.
+ The Fix: Turn these heavy endpoints into asynchronous tasks. When a tenant hits a compute-heavy endpoint, your API should immediately return a ⁠202 Accepted⁠ status code along with a task ID, and push the job to a message queue (e.g., RabbitMQ, AWS SQS, Kafka).
+ Worker Throttling: Background workers can then process these queues at a controlled pace. You can even use Fair-Share Scheduling in your queues to ensure that if Tenant A dumps 10,000 heavy jobs into the queue, Tenant B's single job still gets processed promptly.
+
+4. Introduce Adaptive Throttling (Load Shedding)
+Sometimes you need a safety net that protects the system based on overall health rather than individual tenant metrics.
+ How it works: Implement a middleware or API gateway layer that monitors real-time server metrics (CPU usage > 85% or Memory usage > 90%).
+ The Action: When thresholds are crossed, the system automatically triggers load shedding, rejecting heavy non-critical requests with a ⁠503 Service Unavailable⁠ or ⁠429 Too Many Requests⁠ until the system stabilizes.
+
+5. Memory and Query Guardrails
+Sometimes tenants pass malicious or poorly optimized parameters (like requesting a pagination size of ⁠limit=100000⁠).
+ Hard Limits: Enforce strict maximum limits on pagination, payload sizes, and date ranges.
+ Query Timeouts: Implement strict database and execution timeouts (e.g., abort any query taking longer than 5 seconds).
+
+**Summary Checklist for Implementation**
+1 Immediate: Add query timeouts and lower maximum pagination limits.
+2 Short-term: Migrate heavy endpoints to a cost-based token system or isolate their worker pools.
+3 Long-term: Re-architect the heaviest compute calls to be asynchronous via background workers.
+Which of these approaches aligns best with your current tech stack, or are you looking to see how to implement one of these specific patterns?
