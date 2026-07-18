@@ -1,4 +1,9 @@
 # Terminology
+<img width="1762" height="796" alt="image" src="https://github.com/user-attachments/assets/f5f7b5df-ab2b-47d7-9305-b7423db9d286" />
+
+## Why Agents
+<img width="1561" height="548" alt="image" src="https://github.com/user-attachments/assets/533c3635-5589-4348-9ff1-d43d5363180a" />
+
 
 ## LLM
 large language models (LLMs) - and their more compact relations, small language models (SLMs) - encapsulate the linguistic and semantic relationships between the words and phrases in a vocabulary. The model can use these relationships to reason over natural language input and generate meaningful and relevant responses
@@ -31,3 +36,10 @@ Acoustic models learn the relationship between audio features and phonemes—the
 
 ### Prosody generation: Determine pronunciation
 Prosody refers to the rhythm, stress, and intonation patterns that make speech sound natural. Prosody generation determines how to say words, not just which sounds to produce.
+
+## Agent Orchestration Patterns
+- Concurrent orchestration - Broadcast the same task to multiple agents at once and collect their results independently. Useful for parallel analysis, independent subtasks, or ensemble decision making.
+- Sequential orchestration - Pass the output from one agent to the next in a fixed order. Ideal for step-by-step workflows, pipelines, and progressive refinement.
+- Handoff orchestration - Dynamically transfer control between agents based on context or rules. Great for escalation, fallback, and expert routing where one agent works at a time.
+- Group chat orchestration - Coordinate a shared conversation among multiple agents (and optionally a human), managed by a chat manager that chooses who speaks next. Best for brainstorming, collaborative problem solving, and building consensus.
+- Magentic orchestration - A manager-driven approach that plans, delegates, and adapts across specialized agents. Suited to complex, open-ended problems where the solution path evolves.
