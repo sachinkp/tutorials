@@ -1,10 +1,23 @@
-## Text analysis scenarios
+## Customer Support
+<img width="657" height="325" alt="image" src="https://github.com/user-attachments/assets/baa63e5b-962a-4c4d-848b-f955b1633166" />
+### Customer support automation
+- Functionality: The AI agent can retrieve customer order histories, process refunds, and provide real-time updates on shipping statuses.
+- Outcome: Faster resolution of customer queries, reduced workload for support teams, and improved customer satisfaction.
+### E-Learning
+Functionality: The AI agent can recommend courses, track student progress, and answer questions about course content.
+Outcome: Enhanced learning experiences, increased student engagement, and streamlined administrative tasks.
+### Helpdesk
+Functionality: The AI agent can troubleshoot common technical issues, escalate complex problems, and track ticket statuses.
+Outcome: Faster issue resolution, reduced downtime, and improved employee productivity.
 
+## Text analysis scenarios
 Common uses of NLP technologies for text analysis include:
 Analyzing document or transcripts of calls and meetings to determine key subjects and identify specific mentions of people, places, organizations, products, or other entities.
 Analyzing social media posts, product reviews, or articles to evaluate sentiment and opinion.
 Implementing chatbots that can answer frequently asked questions or orchestrate predictable conversational dialogs that don't require the complexity of generative AI.
 Redacting PII before sharing or analyzing data to comply with privacy policies and legislation.
+
+
 
 ## AI speech scenarios
 Speech Recognition: Speech to Text
