@@ -4,6 +4,8 @@
 ## Why Agents
 <img width="1561" height="548" alt="image" src="https://github.com/user-attachments/assets/533c3635-5589-4348-9ff1-d43d5363180a" />
 
+## MCP
+<img width="1797" height="742" alt="image" src="https://github.com/user-attachments/assets/4693b0ea-474e-4777-8b6b-078e44cd3035" />
 
 ## LLM
 large language models (LLMs) - and their more compact relations, small language models (SLMs) - encapsulate the linguistic and semantic relationships between the words and phrases in a vocabulary. The model can use these relationships to reason over natural language input and generate meaningful and relevant responses
